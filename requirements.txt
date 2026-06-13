@@ -1,6 +1,11 @@
 streamlit
+fastapi
+uvicorn
 scikit-learn
 pandas
 numpy
-requests
+nltk
+textblob
+groq
 python-dotenv
+pydantic
