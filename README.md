@@ -1,35 +1,28 @@
-# AI News Intelligence System
+# 🧠 AI News Intelligence System
 
-A machine learning and generative AI application that analyzes news articles and provides:
-
-- Fake News Detection
-- Sentiment Analysis
-- AI-Generated Summary
-
-The goal of this project is to combine traditional machine learning techniques with modern LLM-based summarization to help users quickly understand and evaluate news content.
+An AI-powered application that combines **Machine Learning**, **Natural Language Processing (NLP)**, and **Generative AI** to analyze news articles. The system detects fake news, performs sentiment analysis, generates AI-powered summaries, and exposes its functionality through both a **Streamlit Web App** and a **FastAPI REST API**.
 
 ---
 
-## Features
+# 🚀 Features
 
-### Fake News Detection
-Uses TF-IDF vectorization and Logistic Regression to classify news as Real or Fake.
-
-### Sentiment Analysis
-Analyzes article tone and classifies it as:
-- Positive
-- Negative
-- Neutral
-
-### AI Summary Generation
-Uses Groq's LLaMA 3 model to generate concise summaries of lengthy news articles.
+- 📰 Fake News Detection
+- 😊 Sentiment Analysis
+- 🤖 AI-Generated News Summary
+- 🌐 FastAPI REST API
+- 💻 Interactive Streamlit Web Interface
+- 🐳 Docker Support
 
 ---
 
-## Tech Stack
+# 🛠 Tech Stack
 
 ### Frontend
 - Streamlit
+
+### Backend
+- FastAPI
+- Uvicorn
 
 ### Machine Learning
 - Scikit-learn
@@ -45,15 +38,18 @@ Uses Groq's LLaMA 3 model to generate concise summaries of lengthy news articles
 
 ---
 
-## Project Structure
+# 📂 Project Structure
 
 ```text
-ai-news-intelligence/
+AI-NEWS-INTELLIGENCE-SYSTEM/
 │
-├── app.py
-├── train_model.py
-├── model.pkl
-├── vectorizer.pkl
+├── app.py                     # Streamlit Application
+├── train_model.py             # Model Training Script
+├── model.pkl                  # Trained Model
+├── vectorizer.pkl             # TF-IDF Vectorizer
+│
+├── api/
+│   └── main.py                # FastAPI Backend
 │
 ├── utils/
 │   ├── preprocessing.py
@@ -64,21 +60,22 @@ ai-news-intelligence/
 ├── Dockerfile
 ├── .dockerignore
 ├── .gitignore
-└── README.md
+├── README.md
+└── news.csv                   # Dataset (Optional)
 ```
 
 ---
 
-## Installation
+# ⚙️ Installation
 
-Clone the repository:
+## Clone Repository
 
 ```bash
-git clone <your-repository-url>
-cd ai-news-intelligence
+git clone https://github.com/shailesh55a/AI-NEWS-INTELLIGENCE-SYSTEM.git
+cd AI-NEWS-INTELLIGENCE-SYSTEM
 ```
 
-Install dependencies:
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -86,9 +83,9 @@ pip install -r requirements.txt
 
 ---
 
-## Environment Variables
+# 🔑 Environment Variables
 
-Create a `.env` file:
+Create a `.env` file in the project root.
 
 ```env
 GROQ_API_KEY=your_groq_api_key
@@ -96,28 +93,28 @@ GROQ_API_KEY=your_groq_api_key
 
 ---
 
-## Training the Model
+# 🧠 Train the Model
 
-Place your dataset as:
+Place the dataset as:
 
 ```text
 news.csv
 ```
 
-Expected columns:
+Required columns:
 
 ```text
 text
 label
 ```
 
-Train the model:
+Run:
 
 ```bash
 python train_model.py
 ```
 
-This will generate:
+Generated files:
 
 ```text
 model.pkl
@@ -126,48 +123,107 @@ vectorizer.pkl
 
 ---
 
-## Running the Application
+# 💻 Run Streamlit App
 
 ```bash
 streamlit run app.py
 ```
 
-Application URL:
+Open:
 
-```text
+```
 http://localhost:8501
 ```
 
 ---
 
-## Running with Docker
-
-Build image:
+# 🌐 Run FastAPI
 
 ```bash
-docker build -t ai-news-intelligence .
+uvicorn api.main:app --reload
 ```
 
-Run container:
+API:
 
-```bash
-docker run -p 8501:8501 ai-news-intelligence
+```
+http://127.0.0.1:8000
+```
+
+Swagger Documentation:
+
+```
+http://127.0.0.1:8000/docs
+```
+
+ReDoc Documentation:
+
+```
+http://127.0.0.1:8000/redoc
 ```
 
 ---
 
-## Future Improvements
+# 📡 API Endpoint
 
-- BERT-based fake news detection
-- Live news integration using NewsAPI
-- News credibility scoring
-- User authentication
-- Historical analysis dashboard
+## POST `/predict`
+
+### Request
+
+```json
+{
+  "news": "Paste your news article here..."
+}
+```
+
+### Response
+
+```json
+{
+  "prediction": "Real News",
+  "sentiment": "Positive",
+  "summary": "AI-generated summary..."
+}
+```
 
 ---
 
-## Author
+# 🐳 Docker
 
-Shailesh Bahirat
+## Build Image
+
+```bash
+docker build -t ai-news-intelligence-system .
+```
+
+## Run Container
+
+```bash
+docker run -p 8501:8501 ai-news-intelligence-system
+```
+
+Open:
+
+```
+http://localhost:8501
+```
+
+---
+
+# 🔮 Future Improvements
+
+- BERT-based Fake News Detection
+- Live News API Integration
+- News Credibility Score
+- User Authentication
+- News History Dashboard
+- Multilingual News Analysis
+
+---
+
+# 👨‍💻 Author
+
+**Shailesh Bahirat**
 
 BSc Artificial Intelligence & Machine Learning
+
+GitHub: https://github.com/shailesh55a
