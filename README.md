@@ -8,7 +8,7 @@ An AI-powered application that combines **Machine Learning**, **Natural Language
 
 - 📰 Fake News Detection  
 - 😊 Sentiment Analysis  
-- 🤖 AI-Generated News Summary (Groq GPT-OSS 120B)  
+- 🤖 AI-Generated News Summary (Groq LLM)  
 - 🌐 FastAPI REST API  
 - 💻 Interactive Streamlit Web Interface  
 - 🐳 Docker Support  
@@ -30,8 +30,7 @@ An AI-powered application that combines **Machine Learning**, **Natural Language
 - Logistic Regression  
 
 ### Generative AI
-- Groq API  
-- GPT-OSS 120B  
+- Groq API (llama3-70b-8192 / llama3-8b-8192)  
 
 ### Programming Language
 - Python  
